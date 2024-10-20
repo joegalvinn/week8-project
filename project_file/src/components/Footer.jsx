@@ -1,5 +1,7 @@
 export default function Footer() {
-  <>
-    <h1>Footer</h1>
-  </>;
+  return (
+    <div className="fixed bottom-0 w-full">
+      <h1 className="text-center">Footer</h1>
+    </div>
+  );
 }

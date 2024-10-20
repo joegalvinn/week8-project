@@ -1,0 +1,16 @@
+.deleteButton {
+  background-color: #00858f;
+  color: white;
+  padding: 0.4rem;
+  border: 2px solid #22d3ee;
+  border-radius: 8px;
+  box-shadow: 0 0 2.5px cyan, 0 0 5px cyan;
+  transition: background-color 0.3s ease;
+}
+
+.commentsContainer {
+  position: relative;
+  height: 20vh;
+  overflow-y: auto;
+  margin-bottom: 12vh;
+}

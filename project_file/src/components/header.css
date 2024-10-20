@@ -1,0 +1,38 @@
+.headerContainer {
+  background-image: linear-gradient(
+    180deg,
+    rgb(78, 149, 158) 0%,
+    rgb(50, 114, 122) 20%,
+    hwb(196 0% 85%) 50%,
+    rgb(21, 75, 82) 65%,
+    rgb(50, 114, 122) 80%,
+    rgb(78, 149, 158) 95%
+  );
+  height: 8vh;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.headerTitle {
+  position: relative;
+  left: 2vw;
+  font-size: clamp(14px, 2vw, 30px);
+  color: aqua;
+  text-shadow: 0 0 1px cyan, 0 0 2px cyan;
+  background-color: none;
+}
+
+.navBar {
+  position: absolute;
+  right: 2vw;
+  font-size: clamp(14px, 2vw, 30px);
+  color: aqua;
+  text-shadow: 0 0 1px cyan, 0 0 2px cyan;
+  background-color: none;
+}

@@ -1,0 +1,23 @@
+.mainText {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 12vh;
+  font-size: 7vw;
+  background-color: none;
+}
+
+.bodyText {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 3vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  font-size: clamp(14px, 3vw, 35px);
+  background-color: none;
+}

@@ -1,6 +1,7 @@
 import { db } from "@/utils/dbConnection";
 import { revalidatePath } from "next/cache";
 import OnClickDelete from "@/components/OnClickDelete";
+import "./detailedReviews.css";
 
 export default async function detailedReview({ params }) {
   const { id } = params;
@@ -41,15 +42,14 @@ export default async function detailedReview({ params }) {
   return (
     <div>
       <div className="returnDetailedDataContainer">
-        <div
-          key={review.id}
-          className="border-lime-700 border-2 flex flex-col items-center"
-        >
-          <h2>{review.gadget_name}</h2>
-          <h2>{review.rating}</h2>
-          <h3>{review.review}</h3>
-          <h3>£{review.price}</h3>
-          <h3>{review.reviewer_name}</h3>
+        <div key={review.id} className="flex flex-col items-center">
+          <h2 className="name">{review.gadget_name}</h2>
+          <h2 className="rating">{review.rating}</h2>
+          <h3 className="review">"{review.review}"</h3>
+          <h3 className="price">£{review.price}</h3>
+          <h3 className="reviewer">
+            <i>{review.reviewer_name}</i>
+          </h3>
           <img
             src={review.image_url}
             alt={review.gadget_name}
@@ -58,7 +58,7 @@ export default async function detailedReview({ params }) {
         </div>
       </div>
 
-      <div>
+      <div className="dButton">
         <OnClickDelete
           comments={wrangledComments}
           handleDelete={handleDelete}
@@ -66,31 +66,36 @@ export default async function detailedReview({ params }) {
       </div>
 
       <div className="commentForm">
-        <h1>Add a review</h1>
-
+        <h1 className="neon-text neon-glow commentHeader">Add a Review</h1>{" "}
+        {/* Updated heading */}
         <form action={handleSubmit}>
-          <label htmlFor="name">Username:</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            required
-            className="bg-black text-white"
-          />
+          <div className="form-spacing">
+            <label htmlFor="name" className="neon-text">
+              Username:
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              required
+              className="neon-input"
+            />
+          </div>
 
-          <label htmlFor="comment">Comment: </label>
-          <input
-            type="text"
-            name="comment"
-            id="comment"
-            required
-            className="bg-black text-white"
-          />
+          <div className="form-spacing">
+            <label htmlFor="comment" className="neon-text">
+              Comment:
+            </label>
+            <input
+              type="text"
+              name="comment"
+              id="comment"
+              required
+              className="neon-input"
+            />
+          </div>
 
-          <button
-            type="submit"
-            className=" bg-orange-800 border-amber-400 border-4 rounded-sm"
-          >
+          <button type="submit" className="neon-button">
             Add Comment
           </button>
         </form>
